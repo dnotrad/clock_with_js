@@ -1,0 +1,123 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+/*КОНЕЦ ОБНУЛЕНИЯ*/
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 1230px;
+    padding: 0 15px;
+}
+
+.clock_inner{
+    display: flex;
+}
+.time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #4E4D4D;
+    /* margin-right: 15px; */
+    border-radius: 10px;
+    font-size: 60px;
+    color: #fff;
+}
+.time:last-child{
+    margin-right: 0;
+}
+.dots{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 40px;
+}
+.dot{
+    width: 7px;
+    height: 7px;
+    /* border-radius: 5px; */
+    background-color: #4E4D4D;
+    margin-bottom: 15px;
+    animation: flashing 1.5s ease-in-out infinite;
+}
+.dot:last-child{
+    margin-bottom: 0;
+}
+footer{
+    text-align: center;
+    padding-bottom: 5px;
+}
+footer span{
+    color: tomato;
+}
+
+
+@keyframes flashing{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 500px){
+    .time{
+        width: 70px;
+        height: 70px;
+        font-size: 45px;
+    }
+    .dots{
+        height: 70px;
+        width: 30px;
+    }
+    .dot{
+        width: 5px;
+        height: 5px;
+    }
+}
